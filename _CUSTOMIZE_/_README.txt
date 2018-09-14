@@ -1,0 +1,1 @@
+All file types placed here will be copied into the platform directory via 'ant customize' during build process

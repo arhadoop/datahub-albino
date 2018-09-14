@@ -1,0 +1,9 @@
+#Ant properties
+#Tue May 08 10:50:03 CEST 2018
+builddate=20180508 1048
+description=albinocockpits
+name=albinocockpits
+releasedate=20171129 1517
+vendor=hybris
+version=6.6.0.5
+version.api=6.6.0

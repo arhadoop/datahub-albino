@@ -1,0 +1,114 @@
+<!--
+  ~ [y] hybris Platform
+  ~
+  ~ Copyright (c) 2018 SAP SE or an SAP affiliate company.
+  ~ All rights reserved.
+  ~
+  ~ This software is the confidential and proprietary information of SAP
+  ~ ("Confidential Information"). You shall not disclose such Confidential
+  ~ Information and shall use it only in accordance with the terms of the
+  ~ license agreement you entered into with SAP.
+  -->
+<extension xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.hybris.com/schema/"
+		   xsi:schemaLocation="http://www.hybris.com/schema/ datahub-metadata-schema-1.4.0.xsd"
+		   name="bicycle-apparel">
+
+	<dependencies>
+		<dependency>
+			<extension>pre-bicycle-apparel</extension>
+		</dependency>
+	</dependencies>
+
+	<canonicalItems>
+		<item>
+			<type>CanonicalCyclingApparel</type>
+			<documentId spel="true">new String("document_id|").toUpperCase() + getField('manufacturerAID') + "|" + getField('numericID')</documentId>
+			<attributes>
+				<attribute>
+					<name>identifier</name>
+					<transformations>
+						<transformation disabled="true">
+							<rawSource>RawCyclingShoeSize</rawSource>
+							<expression>usSize</expression>
+						</transformation>
+					</transformations>
+				</attribute>
+				<attribute>
+					<name>region</name>
+					<transformations>
+						<transformation disabled="false" override="true">
+							<rawSource>RawCyclingApparel</rawSource>
+							<expression>region</expression>
+						</transformation>
+					</transformations>
+				</attribute>
+			</attributes>
+		</item>
+	</canonicalItems>
+
+
+	<targetSystems>
+		<targetSystem>
+			<name>HybrisApparelCoreInstallation</name>
+			<type>HybrisCore</type>
+			<exportURL>${datahub.extension.exportURL}</exportURL>
+			<userName>${datahub.extension.userName}</userName>
+			<password>${datahub.extension.password}</password>
+			<exportCodes>
+				<exportCode>
+					$catalogVersion=catalogversion(catalog(id[default=apparelProductCatalog]),version[default='Staged'])[unique=true,default=apparelProductCatalog:Staged]
+				</exportCode>
+			</exportCodes>
+
+			<targetItems>
+
+				<item>
+					<type>CyclingApparel</type>
+					<exportCode>ApparelProduct</exportCode>
+					<description />
+					<updatable>true</updatable>
+					<canonicalItemSource>CanonicalCyclingApparel</canonicalItemSource>
+					<status />
+					<attributes>
+						<attribute override="true">
+							<name>base_name</name>
+							<localizable>true</localizable>
+							<collection>false</collection>
+							<transformationExpression>base_name</transformationExpression>
+							<exportCode>name</exportCode>
+							<mandatoryInHeader>false</mandatoryInHeader>
+						</attribute>
+						<attribute override="true">
+							<name>baseDescription</name>
+							<localizable>true</localizable>
+							<collection>false</collection>
+							<transformationExpression>baseDescription</transformationExpression>
+							<exportCode>description</exportCode>
+							<mandatoryInHeader>false</mandatoryInHeader>
+						</attribute>
+						<attribute disabled="true">
+							<name>color</name>
+						</attribute>
+						<attribute disabled="true">
+							<name>size</name>
+						</attribute>
+						<!-- Disabled attribute that doesn't exist. It should not pass the validation -->
+						<attribute disabled="true">
+							<name>nonExistingAttribute</name>
+						</attribute>
+						<!-- Attribute that already exists and is not defined as override. It should not pass the validation -->
+						<attribute override="false">
+							<name>promotions</name>
+							<localizable>false</localizable>
+							<collection>false</collection>
+							<transformationExpression>resolve('CanonicalCyclingPromotionsLookup')?.promotions
+							</transformationExpression>
+							<exportCode>promotions</exportCode>
+							<mandatoryInHeader>false</mandatoryInHeader>
+						</attribute>
+					</attributes>
+				</item>
+			</targetItems>
+		</targetSystem>
+	</targetSystems>
+</extension>

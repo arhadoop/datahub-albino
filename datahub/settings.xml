@@ -1,0 +1,577 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<settings
+	xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.1.0 http://maven.apache.org/xsd/settings-1.1.0.xsd"
+	xmlns="http://maven.apache.org/SETTINGS/1.1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+
+	<!-- Without these plugin groups you cannot call the plugins directly, see 
+		http://maven.apache.org/settings.html#Plugin_Groups -->
+	<pluginGroups>
+		<pluginGroup>de.hybris.mavenplugins</pluginGroup>
+		<pluginGroup>org.codehaus.cargo</pluginGroup>
+		<pluginGroup>de.hybris.platform</pluginGroup>
+	</pluginGroups>
+
+<!-- proxies
+   | This is a list of proxies which can be used on this machine to connect to the network.
+   | Unless otherwise specified (by system property or command-line switch), the first proxy
+   | specification in this list marked as active will be used.
+  <proxies>
+    	<proxy>
+	      <id>wdf-https</id>
+	      <active>true</active>
+	      <protocol>https</protocol>
+	      <host>proxy.wdf.sap.corp</host>
+	      <port>8080</port>
+	      <nonProxyHosts>local.net|some.host.com</nonProxyHosts>
+	    </proxy>
+  </proxies>
+   |-->
+
+	<servers>
+		<!-- test-nexus repos 
+		<server>
+			<id>test-nexus-dranura-release</id>
+			<username>admin</username>
+			<password>admin123</password>
+		</server>
+		<server>
+			<id>test-nexus-dranura-snapshot</id>
+			<username>admin</username>
+			<password>admin123</password>
+		</server>
+		<server>
+			<id>test-nexus-hybris-release</id>
+			<username>admin</username>
+			<password>admin123</password>
+		</server>
+		-->
+
+		<!-- global hybris repository for read access -->
+		<server>
+			<id>hybris-repository</id>
+			<username>jonathan.hess@sap.com</username>
+			<password>AP5nDx53DXJMjEW6nZ5WafSKFHjTh7WCbCoJC8</password>
+		</server>
+		<server>
+			<id>hybris_repository</id>
+			<username>jonathan.hess@sap.com</username>
+			<password>AP5nDx53DXJMjEW6nZ5WafSKFHjTh7WCbCoJC8</password>
+		</server>
+
+		<!-- hybris snapshot repository -->
+		<server>
+			<id>hybris-snapshot</id>
+			<username>jonathan.hess@sap.com</username>
+			<password>AP5nDx53DXJMjEW6nZ5WafSKFHjTh7WCbCoJC8</password>
+		</server>
+
+		<!-- hybris (internal) release repository -->
+		<server>
+			<id>hybris-release</id>
+			<username>jonathan.hess@sap.com</username>
+			<password>AP5nDx53DXJMjEW6nZ5WafSKFHjTh7WCbCoJC8</password>
+		</server>
+
+		<!-- hybris (public) release repository -->
+		<server>
+			<id>hybris-public-release</id>
+			<username>jonathan.hess@sap.com</username>
+			<password>AP5nDx53DXJMjEW6nZ5WafSKFHjTh7WCbCoJC8</password>
+		</server>
+
+		<!-- hybris infrastructure repository -->
+		<server>
+			<id>infrastructure</id>
+			<username>jonathan.hess@sap.com</username>
+			<password>AP5nDx53DXJMjEW6nZ5WafSKFHjTh7WCbCoJC8</password>
+		</server>
+
+		<!-- commons repositories -->
+		<server>
+			<id>commons-release</id>
+			<username>jonathan.hess@sap.com</username>
+			<password>AP5nDx53DXJMjEW6nZ5WafSKFHjTh7WCbCoJC8</password>
+		</server>
+		<server>
+			<id>commons-snapshot</id>
+			<username>jonathan.hess@sap.com</username>
+			<password>AP5nDx53DXJMjEW6nZ5WafSKFHjTh7WCbCoJC8</password>
+		</server>
+
+		<!-- dranura repositories -->
+		<server>
+			<id>dranura-release</id>
+			<username>jonathan.hess@sap.com</username>
+			<password>AP5nDx53DXJMjEW6nZ5WafSKFHjTh7WCbCoJC8</password>
+		</server>
+		<server>
+			<id>dranura-snapshot</id>
+			<username>jonathan.hess@sap.com</username>
+			<password>AP5nDx53DXJMjEW6nZ5WafSKFHjTh7WCbCoJC8</password>
+		</server>
+
+		<!-- cockpitng repositories -->
+		<server>
+			<id>cockpitng-release</id>
+			<username>jonathan.hess@sap.com</username>
+			<password>AP5nDx53DXJMjEW6nZ5WafSKFHjTh7WCbCoJC8</password>
+		</server>
+		<server>
+			<id>cockpitng-snapshot</id>
+			<username>jonathan.hess@sap.com</username>
+			<password>AP5nDx53DXJMjEW6nZ5WafSKFHjTh7WCbCoJC8</password>
+		</server>
+		
+		<!-- SAP integration repositoríes -->
+		<server>
+			<id>sap-integration</id>
+			<username>jonathan.hess@sap.com</username>
+			<password>AP5nDx53DXJMjEW6nZ5WafSKFHjTh7WCbCoJC8</password>
+		</server>
+
+		<server>
+			<id>sap-integration-release</id>
+			<username>jonathan.hess@sap.com</username>
+			<password>AP5nDx53DXJMjEW6nZ5WafSKFHjTh7WCbCoJC8</password>
+		</server>
+
+		<server>
+			<id>sap-integration-snapshot</id>
+			<username>jonathan.hess@sap.com</username>
+			<password>AP5nDx53DXJMjEW6nZ5WafSKFHjTh7WCbCoJC8</password>
+		</server>
+
+		<!-- yaas repositories -->
+		<server>
+			<id>yaas-release</id>
+			<username>jonathan.hess@sap.com</username>
+			<password>AP5nDx53DXJMjEW6nZ5WafSKFHjTh7WCbCoJC8</password>
+		</server>
+		<server>
+			<id>yaas-public-release</id>
+			<username>jonathan.hess@sap.com</username>
+			<password>AP5nDx53DXJMjEW6nZ5WafSKFHjTh7WCbCoJC8</password>
+		</server>
+		<server>
+			<id>yaas-snapshot</id>
+			<username>jonathan.hess@sap.com</username>
+			<password>AP5nDx53DXJMjEW6nZ5WafSKFHjTh7WCbCoJC8</password>
+		</server>
+
+		<!-- sbt plugin repository -->
+		<server>
+			<id>sbt-plugins-snapshot</id>
+			<username>jonathan.hess@sap.com</username>
+			<password>AP5nDx53DXJMjEW6nZ5WafSKFHjTh7WCbCoJC8</password>
+		</server>
+		<server>
+			<id>sbt-plugins-release</id>
+			<username>jonathan.hess@sap.com</username>
+			<password>AP5nDx53DXJMjEW6nZ5WafSKFHjTh7WCbCoJC8</password>
+		</server>
+
+	</servers>
+
+
+	<profiles>
+
+		<profile>
+
+			<id>default</id>
+
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+
+			<repositories>
+
+				<!-- hybris repositories -->
+				<repository>
+					<id>hybris-repository</id>
+					<url>https://repository.hybris.com/hybris-repository</url>
+					<releases>
+						<enabled>true</enabled>
+						<updatePolicy>daily</updatePolicy>
+						<checksumPolicy>fail</checksumPolicy>
+					</releases>
+					<snapshots>
+						<enabled>true</enabled>
+						<updatePolicy>always</updatePolicy>
+						<checksumPolicy>fail</checksumPolicy>
+					</snapshots>
+				</repository>
+
+				<repository>
+					<id>hybris-release</id>
+					<url>https://repository.hybris.com/hybris-release</url>
+					<releases>
+						<enabled>true</enabled>
+						<updatePolicy>daily</updatePolicy>
+						<checksumPolicy>fail</checksumPolicy>
+					</releases>
+					<snapshots>
+						<enabled>false</enabled>
+					</snapshots>
+				</repository>
+
+				<repository>
+					<id>hybris-public-release</id>
+					<url>https://repository.hybris.com/hybris-public-release</url>
+					<releases>
+						<enabled>true</enabled>
+						<updatePolicy>daily</updatePolicy>
+						<checksumPolicy>fail</checksumPolicy>
+					</releases>
+					<snapshots>
+						<enabled>false</enabled>
+					</snapshots>
+				</repository>
+
+				<repository>
+					<id>sap-public-release</id>
+					<url>https://nexusrel.wdf.sap.corp:8443/nexus/content/groups/releases.all/</url>
+					<releases>
+						<enabled>true</enabled>
+						<updatePolicy>daily</updatePolicy>
+						<checksumPolicy>fail</checksumPolicy>
+					</releases>
+					<snapshots>
+						<enabled>false</enabled>
+					</snapshots>
+				</repository>
+				<!-- 
+				<repository>
+					<id>test-nexus-dranura-release</id>
+					<url>https://nexus.stout.ecp.ydev.hybris.com/repository/dranura-release</url>
+					<releases>
+						<enabled>true</enabled>
+						<updatePolicy>daily</updatePolicy>
+						<checksumPolicy>fail</checksumPolicy>
+					</releases>
+					<snapshots>
+						<enabled>false</enabled>
+					</snapshots>
+				</repository>
+				<repository>
+					<id>test-nexus-dranura-snapshot</id>
+					<url>https://nexus.stout.ecp.ydev.hybris.com/repository/dranura-snapshot</url>
+					<releases>
+						<enabled>false</enabled>
+						<updatePolicy>daily</updatePolicy>
+						<checksumPolicy>fail</checksumPolicy>
+					</releases>
+					<snapshots>
+						<enabled>true</enabled>
+					</snapshots>
+				</repository>
+				<repository>
+					<id>test-nexus-hybris-release</id>
+					<url>https://nexus.stout.ecp.ydev.hybris.com/repository/hybris-release</url>
+					<releases>
+						<enabled>true</enabled>
+						<updatePolicy>daily</updatePolicy>
+						<checksumPolicy>fail</checksumPolicy>
+					</releases>
+					<snapshots>
+						<enabled>false</enabled>
+					</snapshots>
+				</repository>		
+				-->						
+								
+				<repository>
+					<id>sap-archetype</id>
+					<url>https://nexusrel.wdf.sap.corp:8443/nexus/content/groups/releases.all/</url>
+					<releases>
+						<enabled>true</enabled>
+						<updatePolicy>daily</updatePolicy>
+						<checksumPolicy>fail</checksumPolicy>
+					</releases>
+					<snapshots>
+						<enabled>false</enabled>
+					</snapshots>
+				</repository>				
+
+				<repository>
+					<id>infrastructure</id>
+					<url>https://repository.hybris.com/infrastructure</url>
+					<releases>
+						<enabled>true</enabled>
+						<updatePolicy>daily</updatePolicy>
+						<checksumPolicy>fail</checksumPolicy>
+					</releases>
+					<snapshots>
+						<enabled>true</enabled>
+						<updatePolicy>always</updatePolicy>
+						<checksumPolicy>fail</checksumPolicy>
+					</snapshots>
+				</repository>
+
+				<repository>
+					<id>hybris-snapshot</id>
+					<url>https://repository.hybris.com/hybris-snapshot</url>
+					<releases>
+						<enabled>false</enabled>
+					</releases>
+					<snapshots>
+						<enabled>true</enabled>
+						<updatePolicy>always</updatePolicy>
+						<checksumPolicy>fail</checksumPolicy>
+					</snapshots>
+				</repository>
+				
+				<repository>
+					<id>commons-release</id>
+					<url>https://repository.hybris.com/commons-release</url>
+					<releases>
+						<enabled>true</enabled>
+						<updatePolicy>daily</updatePolicy>
+						<checksumPolicy>fail</checksumPolicy>
+					</releases>
+					<snapshots>
+						<enabled>false</enabled>
+					</snapshots>
+				</repository>
+				
+				<repository>
+					<id>commons-snapshot</id>
+					<url>https://repository.hybris.com/commons-snapshot</url>
+					<releases>
+						<enabled>false</enabled>
+					</releases>
+					<snapshots>
+						<enabled>true</enabled>
+						<updatePolicy>always</updatePolicy>
+						<checksumPolicy>fail</checksumPolicy>
+					</snapshots>
+				</repository>
+				
+				<repository>
+					<id>dranura-release</id>
+					<url>https://repository.hybris.com/dranura-release</url>
+					<releases>
+						<enabled>true</enabled>
+						<updatePolicy>daily</updatePolicy>
+						<checksumPolicy>fail</checksumPolicy>
+					</releases>
+					<snapshots>
+						<enabled>false</enabled>
+					</snapshots>
+				</repository>
+				
+				<repository>
+					<id>dranura-snapshot</id>
+					<url>https://repository.hybris.com/dranura-snapshot</url>
+					<releases>
+						<enabled>false</enabled>
+					</releases>
+					<snapshots>
+						<enabled>true</enabled>
+						<updatePolicy>always</updatePolicy>
+						<checksumPolicy>fail</checksumPolicy>
+					</snapshots>
+				</repository>
+				
+				<repository>
+					<id>cockpitng-release</id>
+					<url>https://repository.hybris.com/cockpitng-release</url>
+					<releases>
+						<enabled>true</enabled>
+						<updatePolicy>daily</updatePolicy>
+						<checksumPolicy>fail</checksumPolicy>
+					</releases>
+					<snapshots>
+						<enabled>false</enabled>
+					</snapshots>
+				</repository>
+				
+				<repository>
+					<id>cockpitng-snapshot</id>
+					<url>https://repository.hybris.com/cockpitng-snapshot</url>
+					<releases>
+						<enabled>false</enabled>
+					</releases>
+					<snapshots>
+						<enabled>true</enabled>
+						<updatePolicy>always</updatePolicy>
+						<checksumPolicy>fail</checksumPolicy>
+					</snapshots>
+				</repository>
+
+				<repository>
+					<id>sap-integration</id>
+					<url>https://repository.hybris.com/sap-integration</url>
+					<releases>
+						<enabled>true</enabled>
+						<updatePolicy>daily</updatePolicy>
+						<checksumPolicy>fail</checksumPolicy>
+					</releases>
+					<snapshots>
+						<enabled>true</enabled>
+						<updatePolicy>always</updatePolicy>
+						<checksumPolicy>fail</checksumPolicy>
+					</snapshots>
+				</repository>
+
+				<repository>
+					<id>sap-integration-release</id>
+					<url>https://repository.hybris.com/sap-integration-release</url>
+					<releases>
+						<enabled>true</enabled>
+						<updatePolicy>daily</updatePolicy>
+						<checksumPolicy>fail</checksumPolicy>
+					</releases>
+					<snapshots>
+						<enabled>false</enabled>
+					</snapshots>
+				</repository>
+
+				<repository>
+					<id>sap-integration-snapshot</id>
+					<url>https://repository.hybris.com/sap-integration-snapshot</url>
+					<releases>
+						<enabled>false</enabled>
+					</releases>
+					<snapshots>
+						<enabled>true</enabled>
+						<updatePolicy>always</updatePolicy>
+						<checksumPolicy>fail</checksumPolicy>
+					</snapshots>
+				</repository>
+
+				<repository>
+					<id>yaas-release</id>
+					<url>https://repository.hybris.com/yaas-release</url>
+					<releases>
+						<enabled>true</enabled>
+						<updatePolicy>daily</updatePolicy>
+						<checksumPolicy>fail</checksumPolicy>
+					</releases>
+					<snapshots>
+						<enabled>false</enabled>
+					</snapshots>
+				</repository>
+
+				<repository>
+					<id>yaas-public-release</id>
+					<url>https://repository.hybris.com/yaas-public-release</url>
+					<releases>
+						<enabled>true</enabled>
+						<updatePolicy>daily</updatePolicy>
+						<checksumPolicy>fail</checksumPolicy>
+					</releases>
+					<snapshots>
+						<enabled>false</enabled>
+					</snapshots>
+				</repository>
+				
+				<repository>
+					<id>yaas-snapshot</id>
+					<url>https://repository.hybris.com/yaas-snapshot</url>
+					<releases>
+						<enabled>false</enabled>
+					</releases>
+					<snapshots>
+						<enabled>true</enabled>
+						<updatePolicy>always</updatePolicy>
+						<checksumPolicy>fail</checksumPolicy>
+					</snapshots>
+				</repository>
+
+			</repositories>
+
+			<pluginRepositories>
+				
+				<pluginRepository>
+					<id>hybris-repository</id>
+					<url>https://repository.hybris.com/hybris-repository</url>
+					<releases>
+						<enabled>true</enabled>
+						<updatePolicy>daily</updatePolicy>
+						<checksumPolicy>fail</checksumPolicy>
+					</releases>
+					<snapshots>
+						<enabled>true</enabled>
+						<updatePolicy>always</updatePolicy>
+						<checksumPolicy>fail</checksumPolicy>
+					</snapshots>
+				</pluginRepository>
+				<pluginRepository>
+					<id>commons-release</id>
+					<url>https://repository.hybris.com/commons-release</url>
+					<releases>
+						<enabled>true</enabled>
+						<updatePolicy>daily</updatePolicy>
+						<checksumPolicy>fail</checksumPolicy>
+					</releases>
+					<snapshots>
+						<enabled>false</enabled>
+					</snapshots>
+				</pluginRepository>
+				<pluginRepository>
+					<id>commons-snapshot</id>
+					<url>https://repository.hybris.com/commons-snapshot</url>
+					<releases>
+						<enabled>false</enabled>
+					</releases>
+					<snapshots>
+						<enabled>true</enabled>
+						<updatePolicy>always</updatePolicy>
+						<checksumPolicy>fail</checksumPolicy>
+					</snapshots>
+				</pluginRepository>
+				<pluginRepository>
+					<id>dranura-release</id>
+					<url>https://repository.hybris.com/dranura-release</url>
+					<releases>
+						<enabled>true</enabled>
+						<updatePolicy>daily</updatePolicy>
+						<checksumPolicy>fail</checksumPolicy>
+					</releases>
+					<snapshots>
+						<enabled>false</enabled>
+					</snapshots>
+				</pluginRepository>
+				<pluginRepository>
+					<id>dranura-snapshot</id>
+					<url>https://repository.hybris.com/dranura-snapshot</url>
+					<releases>
+						<enabled>false</enabled>
+					</releases>
+					<snapshots>
+						<enabled>true</enabled>
+						<updatePolicy>always</updatePolicy>
+						<checksumPolicy>fail</checksumPolicy>
+					</snapshots>
+				</pluginRepository>
+				<pluginRepository>
+					<id>cockpitng-release</id>
+					<url>https://repository.hybris.com/cockpitng-release</url>
+					<releases>
+						<enabled>true</enabled>
+						<updatePolicy>daily</updatePolicy>
+						<checksumPolicy>fail</checksumPolicy>
+					</releases>
+					<snapshots>
+						<enabled>false</enabled>
+					</snapshots>
+				</pluginRepository>
+				<pluginRepository>
+					<id>cockpitng-snapshot</id>
+					<url>https://repository.hybris.com/cockpitng-snapshot</url>
+					<releases>
+						<enabled>false</enabled>
+					</releases>
+					<snapshots>
+						<enabled>true</enabled>
+						<updatePolicy>always</updatePolicy>
+						<checksumPolicy>fail</checksumPolicy>
+					</snapshots>
+				</pluginRepository>
+			</pluginRepositories>
+
+		</profile>
+
+	</profiles>
+
+</settings>
