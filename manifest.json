@@ -3,14 +3,10 @@
     "extensions": [
         "kiwi",
         "tiger",
-        "albinostorefront",
         "backoffice",
         "platformbackoffice",
         "modeltacceleratorservices",
         "electronicsstore",
-        "albinofulfilmentprocess",
-        "privacyoverlayeraddon",
-        "albinoaddon",
         "azurecloudhotfolder",
         "datahubadapter",
         "datahubbackoffice",
@@ -30,8 +26,8 @@
     "storefrontAddons": [
         {
             "addon": "sapcoreaddon",
-            "storefront": "albinostorefront",
-            "template": "albinostorefront"
+            "storefront": "",
+            "template": ""
         }
     ],
     "properties": [
@@ -123,18 +119,6 @@
                     "value": "true"
                 },
                 {
-                    "key": "spring.session.albinostorefront.save",
-                    "value": "async"
-                },
-                {
-                    "key": "spring.session.albinostorefront.cookie.name",
-                    "value": "JSESSIONID"
-                },
-                {
-                    "key": "spring.session.albinostorefront.cookie.path",
-                    "value": "/"
-                },
-                {
                     "key": "storefrontContextRoot",
                     "value": ""
                 }
@@ -143,10 +127,6 @@
                 {
                     "name": "mediaweb",
                     "contextPath": "/medias"
-                },
-                {
-                    "name": "albinostorefront",
-                    "contextPath": ""
                 },
                 {
                     "name": "acceleratorservices",
@@ -177,20 +157,19 @@
     "tests": {
         "extensions": [
             "kiwi",
-            "tiger",
-            "albinoaddon"
+            "tiger"   
         ],
         "annotations": [
             "UnitTests",
             "IntegrationTests"
         ],
         "packages": [
-            "com.acme.*"
+            ""
         ]
     },
     "webTests": {
         "extensions": [
-            "albinostorefront"
+            ""
         ],
         "excludedPackages": [
             "de.hybris.*"
