@@ -21,15 +21,10 @@
         "sapcreditcheckbackoffice",
         "sapcoretest",
         "sapreturnsexchange",
+        "yacceleratorstorefront",
         "ysaperpreturnprocess"
     ],
-    "storefrontAddons": [
-        {
-            "addon": "sapcoreaddon",
-            "storefront": "",
-            "template": ""
-        }
-    ],
+
     "properties": [
         {
             "key": "lang.packs",
@@ -129,6 +124,10 @@
                     "contextPath": "/medias"
                 },
                 {
+                    "name": "yacceleratorstorefront",
+                    "contextPath": "/yacceleratorstorefront"
+                },
+                {
                     "name": "acceleratorservices",
                     "contextPath": "/acceleratorservices"
                 }
@@ -136,12 +135,7 @@
         },
         {
             "name": "backgroundProcessing",
-            "properties": [
-                {
-                    "key": "cluster.node.groups",
-                    "value": "integration,yHotfolderCandidate"
-                }
-            ],
+            "properties": [],
             "webapps": [
                 {
                     "name": "hac",
@@ -153,26 +147,5 @@
                 }
             ]
         }
-    ],
-    "tests": {
-        "extensions": [
-            "kiwi",
-            "tiger"   
-        ],
-        "annotations": [
-            "UnitTests",
-            "IntegrationTests"
-        ],
-        "packages": [
-            ""
-        ]
-    },
-    "webTests": {
-        "extensions": [
-            ""
-        ],
-        "excludedPackages": [
-            "de.hybris.*"
-        ]
-    }
+    ]
 }
